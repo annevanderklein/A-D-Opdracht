@@ -1,0 +1,85 @@
+
+Extra Opdracht A&D
+
+Oplossen van een binairo.
+
+Deel 1, implementeren van een onopgeloste binairo
+
+Binairo
+
+-elements : int[][]
+//a table consists of n rows, and n columns
+-zero     : final int
+-one      : final int
+
++Binairo(int n)
+pre: n > 0
+post: has created a Binairo object with n rows and n columns, the value of all elements = -1, the value of zero = 0, the value of one = 1.
+
++setBeginning(int row, int col, int val)
+pre: 0 <= row < n, 0 <= col < n, val = 0 || val = 1
+post: if pre and val = zero , elements[row][col] = zero, else elements[row][col] = one.
+
++setNew(int row, int col, int val)
+pre: 0 <= row < n, 0 <= col < n, val = -1 || val = 0 || val = 1
+post: val = 0, if this is an invalid number, val = 1
+
++get(int row, int col) : int
+pre: 0 <= row < n, 0 <= col < n
+post: if pre returns elements[row][col], returns 7 otherwise
+
++numRows() : int
+post: has returned the number of rows 
+
++toString()
+post: has returned a String representation of the Binairo object
+
+
+
+ 
+Deel 2, checkMethods. 
+
+Gegeven de specificatie van klasse checkMethods. 
+checkMethods
+-check : boolean
++checkMethods()
+post: check = true
+
++noMoreThanTwoRow()
+post: if 3 zeros or ones next to eachother, check = false
+
++noMoreThanTwoColumn() 
+post: if 3 zeros of ones above eachother, check = false
+
++numberOfRow()
+post: if the number of ones, or zeros in the row is more than half of the row length, check = false
+
++numberOfColumn()
+post: if the number of ones, or zeros in the column is more than half of the row length, check = false
+
++identicalRow()
+Pre: the first two rows are filled with ones and zeros
+post: if all the elements of 2 rows match, check = false
+
++identicalColumns()
+Pre: all rows are filled with ones and zeros
+Post: if all the elements of 2 columns match, check = false
+
++getCheck()
+post: return check
+
+
+Deel 3, SolveBinairo
+Klasse SolveBinairo bevat alleen een main method.
+
+SolveBinairo
+//we maken eerst de binairo:
+We gebruiken een scanner om de grootte en de vaste getallen van de binairo in te voeren
+//we lossen de binairo als volgt op:
+We vullen de binairo in, en controleren telkens of er wordt voldaan aan de checkmethods. We vullen eerst een 0 in, en als dat niet klopt, dan wordt het veranderd in een 1. Als dat ook niet blijkt te kloppen, gaan we nog een stapje terug, en veranderen we die 0 ook in een 1 etc. (Backtracking)
+
+
+
+
+
+
